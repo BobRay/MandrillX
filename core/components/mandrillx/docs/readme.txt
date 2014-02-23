@@ -3,9 +3,9 @@ MandrillX
 
 
 Author: Bob Ray <http://bobsguides.com>
-Copyright 2013
+Copyright 2013-2014
 
-Official Documentation: http://bobsguides.com/mandrillx-tutorial.html
+Official Documentation: http://bobsguides.com/mandrillx-class.html
 
 Bugs and Feature Requests: https://github.com:BobRay/MandrillX
 
