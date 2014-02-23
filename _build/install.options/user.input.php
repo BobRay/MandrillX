@@ -56,7 +56,7 @@
  * */
 
 $output = '<p>&nbsp;</p>
-<p>Enter your Mandrill API Key. If you don\'t have one yet, you can leave it blank and set the mandrill_api_key System Setting later (or get one now at <a href="https://mandrillapp.com">Mandrill</a>).</p>
+<p>Enter your Mandrill API Key. If you don\'t have one yet, you can leave it blank and set the mandrill_api_key System Setting later (or get one now at <a href="https://mandrillapp.com" target="_blank" >Mandrill</a>).</p>
 <p>&nbsp;</p>
 <label for="api_key">API Key.</label>
 <p>&nbsp;</p>
