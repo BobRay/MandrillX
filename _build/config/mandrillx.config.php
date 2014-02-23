@@ -22,7 +22,7 @@ $components = array(
     'email' => '<http://bobsguides.com>',
     'authorUrl' => 'http://bobsguides.com',
     'authorSiteName' => "Bob's Guides",
-    'packageDocumentationUrl' => 'http://bobsguides.com/mandrillx-tutorial.html',
+    'packageDocumentationUrl' => 'http://bobsguides.com/mandrillx-class.html',
     'copyright' => '2013-2014',
 
     /* no need to edit this except to change format */
