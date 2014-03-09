@@ -178,6 +178,7 @@ class MandrillX extends Mandrill{
             );
         } else {
             $pairs = explode(',', $headers);
+            $hasReplyTo = false;
             foreach($pairs as $pair) {
                 if (empty($pair)) {
                     continue;
@@ -188,9 +189,16 @@ class MandrillX extends Mandrill{
                     return array(); /* error - no headers */
                 } else {
                     $h[trim($couple[0])] = trim($couple[1]);
+                    if (stristr($couple[0], 'reply-to')) {
+                        $hasReplyTo = true;
+                    }
                 }
-
             }
+            /* Add reply-to if it's not there */
+            if (! $hasReplyTo) {
+                $h['Reply-To'] = $this->modx->getOption('emailsender');
+            }
+
         }
         return $h;
     }
