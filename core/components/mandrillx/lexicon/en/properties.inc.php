@@ -1,9 +1,9 @@
 <?php
 /**
- * en default topic lexicon file for MandrillX extra
+ * en:properties.inc.php topic lexicon file for MandrillX extra
  *
- * Copyright 2013 by Bob Ray <http://bobsguides.com>
- * Created on 02-04-2014
+ * Copyright 2013-2014 by Bob Ray <http://bobsguides.com>
+ * Created on 03-12-2014
  *
  * MandrillX is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
@@ -24,7 +24,7 @@
 /**
  * Description
  * -----------
- * en default topic lexicon strings
+ * en:properties.inc.php topic lexicon strings
  *
  * Variables
  * ---------
@@ -34,11 +34,3 @@
  * @package mandrillx
  **/
 
-
-
-/* Used in mandrillx.class.php */
-$_lang['nf_malformed_header'] = 'Could Not Parse Header in getHeaders()';
-
-/* Used in transport.settings.php */
-$_lang['setting_mandrill_api_key'] = 'Mandrill API Key';
-$_lang['setting_mandrill_api_key_desc'] = 'Your API key from mandrilapp.com';

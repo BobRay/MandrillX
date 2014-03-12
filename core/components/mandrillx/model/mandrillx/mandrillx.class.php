@@ -185,7 +185,7 @@ class MandrillX extends Mandrill{
                 }
                 $couple = explode(':', $pair);
                 if (! isset($couple[1]))  {
-                    $this->setError($this->modx->lexicon('nf_malformed_header~~Could Not Parse Header in getHeaders()'));
+                    $this->setError($this->modx->lexicon('nf_malformed_header'));
                     return array(); /* error - no headers */
                 } else {
                     $h[trim($couple[0])] = trim($couple[1]);
