@@ -1,7 +1,4 @@
-<p>MandrillX is a class for sending email through Mandrill. Mandrill is an offshoot of MailChimp. It is geared for sending transactional
-emails, but you can send bulk emails with Mandrill as well. Mandrill allows you to send up to 12,000 emails per month for free. Beyond that,
-the <a href="http://mandrill.com/pricing/">prices</a> are quite reasonable. At first, you may be limited to 250 emails per hour, but if you
-go over, the additional emails will be queued and sent later.</p>
+<p>MandrillX is a class for sending email through Mandrill. Mandrill is an offshoot of MailChimp. It is geared for sending transactional emails, but you can send bulk emails with Mandrill as well. Mandrill allows you to send up to 12,000 emails per month for free. Beyond that, the <a href="http://mandrill.com/pricing/">prices</a> are quite reasonable. At first, you may be limited to 250 emails per hour, but if you go over, the additional emails will be queued and sent later.</p>
 
 <h3>Getting a Mandrill Account and API Key</h3>
 
@@ -16,17 +13,11 @@ go over, the additional emails will be queued and sent later.</p>
 <h3>Installing MandrillX</h3>
 
 <p>
-Go to System | Package Management on the main menu in the MODX Manager and click on the &quot;Download Extras&quot; button. That will take
-you to the
-Revolution Repository (AKA Web Transport Facility). Put MandrillX in the search box and press Enter. Click on the &quot;Download&quot;
-button, and once the package is downloaded,
-click on the &quot;Back to Package Manager&quot; button. That should bring you back to your Package Management grid. Click on the
-&quot;Install&quot; button next to MandrillX in the grid. The MandrillX package should now be installed.</p>
+Go to System | Package Management on the main menu in the MODX Manager and click on the &quot;Download Extras&quot; button. That will take you to the Revolution Repository (AKA Web Transport Facility). Put MandrillX in the search box and press Enter. Click on the &quot;Download&quot; button, and once the package is downloaded, click on the &quot;Back to Package Manager&quot; button. That should bring you back to your Package Management grid. Click on the &quot;Install&quot; button next to MandrillX in the grid. The MandrillX package should now be installed.</p>
 
 <h3>Usage</h3>
 
-MandrillX wraps the Mandrill PHP class to make things a little simpler. Here is a minimal example that sends mail using MandrillX. It assumes that you have an account at Mandrill, and have set the
-<code>mandrill_api_key</code> system setting:
+<p>MandrillX wraps the Mandrill PHP class to make things a little simpler. Here is a minimal example that sends mail using MandrillX. It assumes that you have an account at Mandrill, and have set the <code>mandrill_api_key</code> system setting:</p>
 
 <pre class="brush: php; toolbar: false;"><fixedpre>
     require_once MODX_CORE_PATH . 'components/mandrillx/model/mandrillx/mandrillx.class.php';
@@ -66,59 +57,38 @@ MandrillX wraps the Mandrill PHP class to make things a little simpler. Here is 
 
 <h3>Initialization</h3>
 
-<p>The three arguments to the MandrillX constructor are the <code>$modx</code> object, the Mandrill API key (as a string), and the <code>$scriptProperties</code>
-array. Only the first one is strictly necessary, though you may want to set the <code>'subject'</code>, <code>'from_email'</code>, and
-<code>'from_name'</code> members of the <code>$scriptProperties</code> array. If you don't, the email subject defaults to 'Update from
-[[++site_name]]', the from_email address defaults to the <code>emailsender</code> System Setting, and the from_name defaults to
-[[++site_name]].</p>
+<p>The three arguments to the MandrillX constructor are the <code>$modx</code> object, the Mandrill API key (as a string), and the <code>$scriptProperties</code> array. Only the first one is strictly necessary, though you may want to set the <code>'subject'</code>, <code>'from_email'</code>, and <code>'from_name'</code> members of the <code>$scriptProperties</code> array. If you don't, the email subject defaults to 'Update from [[++site_name]]', the from_email address defaults to the <code>emailsender</code> System Setting, and the from_name defaults to [[++site_name]].</p>
 
-<p>If the API key is not sent, MandrillX will try to get it first from the <code>$scriptProperties</code> array, and then from the <code>mandrill_api_key</code>
-System Setting.</p>
+<p>If the API key is not sent, MandrillX will try to get it first from the <code>$scriptProperties</code> array, and then from the <code>mandrill_api_key</code> System Setting.</p>
 
-<p>If you do want to set the fields in the <code>$scriptProperties</code> array, they must be set before instantiating the MandrillX object,
-because they are sent in the constructor.</p>
+<p>If you do want to set the fields in the <code>$scriptProperties</code> array, they must be set before instantiating the MandrillX object, because they are sent in the constructor.</p>
 
 <h3>Subaccounts</h3>
 
-<p>Each message or groups of messages you send can be assigned to a subaccount. With MandrillX, you specify the subaccount with the <code>'subaccount'</code>
-member of the <code>$scriptProperties</code> array. The subaccount you specify *must exist at Mandrill* or the send will fail. This is
-important because the subaccount defaults to 'test'. When you visit Mandrillapp.com to get your API key, set up a subaccount called 'test'
-(all lowercase). Once you're done testing your mail system, you can create a new subaccount and delete the 'test' account so all the test
-emails won't be cluttering up the reports. At that point, you should change the subaccount specified in the properties.</p>
+<p>Each message or groups of messages you send can be assigned to a subaccount. With MandrillX, you specify the subaccount with the <code>'subaccount'</code> member of the <code>$scriptProperties</code> array. The subaccount you specify *must exist at Mandrill* or the send will fail. This is important because the subaccount defaults to 'test'. When you visit Mandrillapp.com to get your API key, set up a subaccount called 'test' (all lowercase). Once you're done testing your mail system, you can create a new subaccount and delete the 'test' account so all the test emails won't be cluttering up the reports. At that point, you should change the subaccount specified in the properties.</p>
 
 <h3>Message Structure</h3>
 
-<p>Message sent through MandrillX cannot contain MODX tags (all MODX tags must be resolved before the message is set with
-<code>addHTML()</code>). They can contain user placeholders. The value for these will be different for every message because they are
-user-specific. The user placeholders must be in the form <code>{{+placeholderName}}</code>. These will be converted to Mandrill-style
-placeholders (*|placeholderName|*) just before the message is transmitted to Mandrill.</p>
+<p>Messages sent through MandrillX cannot contain MODX tags. In other words, all MODX tags must be resolved before the message is set with <code>addHTML()</code>. The message can, however, contain user placeholders. The value for these will be different for every message because they are user-specific. The user placeholders must be in the form <code>{{+placeholderName}}</code>. These will be converted to Mandrill-style placeholders (*|placeholderName|*) just before the message is transmitted to Mandrill.</p>
 
 <h3>The addUser() Method</h3>
 
-<p>Users who will receive mail must be added with <code>addUser()</code>. The argument to <code>addUser()</code> is an associative array of
-field names and values. The <code>'name'</code> and
-'email'</p> fields are required. Any other fields will be treated as merge fields and will be used to replace the user-specific placeholders. If there is no user placeholder matching a sent field, it will be ignored. Important: Mandrill requires that each email address be unique when sending a particular message. If there are duplicate email addresses, the user placeholders will not be set correctly.
+<p>Users who will receive mail must be added with <code>addUser()</code>. The argument to <code>addUser()</code> is an associative array of field names and values. The <code>name</code> and <code>email</code> fields are required. Any other fields will be treated as merge fields and will be used to replace the user-specific placeholders. If there is no user placeholder matching a sent field, it will be ignored. Important: Mandrill requires that each email address be unique when sending a particular message. If there are duplicate email addresses, the user placeholders will not be set correctly.
 
 
 <h3>Send</h3>
 
-<p>Once all the users have been added with <code>addUser()</code> and the message text has been set, sending the message is simple a matter
-of calling <code>$mx->sendMessage()</code>. The method returns an array of results that you can analyze or dump, but once you have things
-working, you'll find that the reports you'll see at Mandrill are much more useful. In fact, the return value will report success for sends
-to phony email addresses as long as they are well-formed.</p>
+<p>Once all the users have been added with <code>addUser()</code> and the message text has been set, sending the message is simple a matter of calling <code>$mx->sendMessage()</code>. The method returns an array of results that you can analyze or dump, but once you have things working, you'll find that the reports you'll see at Mandrill are much more useful. In fact, the return value will report success for sends to phony email addresses as long as they are well-formed.</p>
 
 <h3>Additional Properties</h3>
 
-<p>There are some optional properties you can include in the <code>$scriptProperties</code> array. The first of these is
-<code>headers</code>. The <code>reply_to</code> header is set automatically, but if you want to send more headers than that, you can include
-them in the the <code>headers</code> member in this form:
+<p>There are some optional properties you can include in the <code>$scriptProperties</code> array. The first of these is <code>headers</code>. The <code>reply_to</code> header is set automatically, but if you want to send more headers than that, you can include them in the the <code>headers</code> member in this form:
 
 <pre class="brush: php; toolbar: false;"><fixedpre>
     $scriptProperties['headers'] = 'header1:header1Value,header2:header2Value';
 </fixedpre></pre>
 
-<p>The other optional properties can be set in your account settings at Mandrill. In MandrillX, they default to <code>null</code>, which
-means that the account settings will be used. If you set them to true or false, they will override the account values:</p>
+<p>The other optional properties can be set in your account settings at Mandrill. In MandrillX, they default to <code>null</code>, which means that the account settings will be used. If you set them to true or false, they will override the account values:</p>
 
 <pre class="brush: php; toolbar: false;"><fixedpre>
     track_opens
@@ -137,28 +107,18 @@ means that the account settings will be used. If you set them to true or false, 
 
 <h3>Setting the Message Content</h3>
 
-<p>How you handle setting the message content depends on when you want to set the content and whether you want to send a multi-part message
-with a plain text version attached.</p>
+<p>How you handle setting the message content depends on when you want to set the content and whether you want to send a multi-part message with a plain text version attached.</p>
 
-<p>You can set the message's HTML content by adding an 'html' member to the <code>$scriptProperties</code> array with the HTML content as
-its value. It should be added to the array before calling the MandrillX constructor. Often, however, you'll want to send the HTML content
-later, after you make some modifications to it. In that case you can just call <code>$mx->setHTML($msg)</code>, where <code>$msg</code> is
-the HTML content you want for the message.</p>
+<p>You can set the message's HTML content by adding an 'html' member to the <code>$scriptProperties</code> array with the HTML content as its value. It should be added to the array before calling the MandrillX constructor. Often, however, you'll want to send the HTML content later, after you make some modifications to it. In that case you can just call <code>$mx->setHTML($msg)</code>, where <code>$msg</code> is the HTML content you want for the message.</p>
 
-<p>What about sending Multi-part message with a text version as well? There are actually several ways to handle this. One is just to set the
-'auto_text' setting at Mandrill to true or set the 'auto_text' property to true. Mandrill will automatically strip the HTML tags and add the
-plain text version to the message. This is the most memory-efficient method.</p>
+<p>What about sending Multi-part message with a text version as well? There are actually several ways to handle this. One is just to set the 'auto_text' setting at Mandrill to true or set the 'auto_text' property to true. Mandrill will automatically strip the HTML tags and add the plain text version to the message. This is the most memory-efficient method.</p>
 
-<p>You may prefer to do the plain text conversion yourself. Notify, for example, uses the html2text class to do the conversion. It produces
-nicely formatted text with all links appearing as references at the end of the text. If you do the conversion yourself, you can add a 'text'
-member to the <code>$scriptProperties</code> array, or you can call <code>mx->setText($msg)</code> at any time before the message is
-actually sent. In that case, you'll want to have the auto_text option turned *off* at Mandrill.</p>
+<p>You may prefer to do the plain text conversion yourself. Notify, for example, uses the html2text class to do the conversion. It produces nicely formatted text with all links appearing as references at the end of the text. If you do the conversion yourself, you can add a 'text' member to the <code>$scriptProperties</code> array, or you can call <code>mx->setText($msg)</code> at any time before the message is actually sent. In that case, you'll want to have the auto_text option turned *off* at Mandrill.</p>
 
 <h3>Using a Tpl Chunk for the Message</h3>
 
-<p>This works very well. If you do it properly, any MODX tags in the chunk will be processed as it is retrieved. User placeholders in the
-form <code>{{+placeholderName}}</code> will be left alone because they are not MODX tags. If your message refers to a Resource, you'll need
-to set any resource-specific placeholders before retrieving the chunk with <code>getChunk()</code>. That goes for TVs as well.</p>
+<p>This works very well. If you do it properly, any MODX tags in the chunk will be processed as it is retrieved. User placeholders in the form <code>{{+placeholderName}}</code> will be left alone because they are not MODX tags. If your message refers to a Resource, you'll need to set any resource-specific placeholders before retrieving the chunk with <code>getChunk()</code>. That goes for TVs as well.</p>
 
-<p>See the core/components/mandrilx/docs/mandrill-example.php file for an example. It uses the <code>MandrillExampleTpl</code> chunk which
-is installed with MandrillX.</p>
+<p>See the core/components/mandrilx/docs/mandrill-example.php file for an example. It uses the <code>MandrillExampleTpl</code> chunk which is installed with MandrillX.</p>
+
+<p>&nbsp;</p>
