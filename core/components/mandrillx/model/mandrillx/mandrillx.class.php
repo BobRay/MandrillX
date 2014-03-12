@@ -305,7 +305,7 @@ class MandrillX extends Mandrill{
     }
 
     /**
-     * Sets the array of user placeholder names used in the tpl chunk
+     * Gets the array of user placeholder names used in the tpl chunk
      *
      * @return array
      */
