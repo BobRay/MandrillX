@@ -22,7 +22,7 @@ Go to System | Package Management on the main menu in the MODX Manager and click
 <pre class="brush: php; toolbar: false;"><fixedpre>
     require_once MODX_CORE_PATH . 'components/mandrillx/model/mandrillx/mandrillx.class.php';
 
-    $msgContent = '<p> Hello {{+fullname}}, this message is for you.</p>
+    $msgContent = '<p> Hello {{+fullname}}, this message is for you.</p>';
 
     $scriptProperties['subject'] = 'Update from ' . $modx->getOption('site_name');
     $scriptProperties['from_name'] = 'Your Name';
