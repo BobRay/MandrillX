@@ -2,7 +2,7 @@
 /**
  * systemSettings transport file for MandrillX extra
  *
- * Copyright 2013-2014 by Bob Ray <http://bobsguides.com>
+ * Copyright 2013-2017 Bob Ray <https://bobsguides.com>
  * Created on 02-04-2014
  *
  * @package mandrillx

@@ -2,7 +2,7 @@
 /**
  * en:properties.inc.php topic lexicon file for MandrillX extra
  *
- * Copyright 2013-2014 by Bob Ray <http://bobsguides.com>
+ * Copyright 2013-2017 Bob Ray <https://bobsguides.com>
  * Created on 03-12-2014
  *
  * MandrillX is free software; you can redistribute it and/or modify it under the

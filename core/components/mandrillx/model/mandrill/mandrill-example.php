@@ -47,7 +47,7 @@ $message = array(
 
         array(
             'name'    => 'PAGEURL',
-            'content' => 'http://bobsguides.com/modx/',
+            'content' => 'https://bobsguides.com/modx/',
         ),
         array(
             'name'    => 'PAGETITLE',
@@ -69,7 +69,7 @@ $message = array(
                     'content' => 'Blow'),
                 array(
                     'name'    => 'UNSUBSCRIBEURL',
-                    'content' => 'http://bobsguides.com/unsubscribe.html',
+                    'content' => 'https://bobsguides.com/unsubscribe.html',
                 ),
                 array(
                     'name'    => 'USERNAME',
@@ -91,7 +91,7 @@ $message = array(
                     ),
                     array(
                         'name'    => 'UNSUBSCRIBEURL',
-                        'content' => 'http://bobsguides.com/bobsunsubscribe.html',
+                        'content' => 'https://bobsguides.com/bobsunsubscribe.html',
                     ),
                 )
         ),
@@ -109,7 +109,7 @@ $message = array(
                     ),
                     array(
                         'name'    => 'UNSUBSCRIBEURL',
-                        'content' => 'http://bobsguides.com/bobsunsubscribe.html',
+                        'content' => 'https://bobsguides.com/bobsunsubscribe.html',
                     ),
                 )
         )
@@ -126,7 +126,7 @@ $template_content = array(
         'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
     array(
         'name' => 'footer',
-        'content' => 'Copyright 2012.')
+        'content' => 'Copyright 2012-2017.')
 
 );
 

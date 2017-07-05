@@ -1,10 +1,14 @@
-MandrillX Extra for MODx Revolution
+MandrillX Extra for MODX Revolution
 =======================================
 
 
-**Author:** Bob Ray <http://bobsguides.com> [Bob's Guides](http://bobsguides.com)
+**Author:** Bob Ray [Bob's Guides](https://bobsguides.com)
 
-Documentation is available at [Bob's Guides](http://bobsguides.com/mandrillx-class.html)
+**Documentation:** [MandrillX](https://bobsguides.com/mandrillx-class.html)
+
+**Bugs and requests:** [MandrillX Issues](https://github.com/BobRay/MandrillX/issues)
+
+**Questions about using MandrillX** [MODX Forums](https://forums.modx.com)
 
 MandrillX is a class for sending email through Mandrill in MODX. It completely bypasses the MODX mail system.
 
